@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">itis-android-uprising-26</string>
+    <string name="title_activity_main">UprisingApp</string>
+
+        <!-- MainScreen -->
+        <string name="title_search_songs">Search Songs</string>
+        <string name="hint_enter_song_name">Enter song name</string>
+        <string name="placeholder_song_example">e.g., Bohemian Rhapsody</string>
+        <string name="button_search">Search</string>
+        <string name="empty_state_text">Enter a song name and press Search</string>
+        <string name="empty_results_text">No songs found. Try another search term.</string>
+        <string name="loading_songs_text">Loading songs…</string>
+        <string name="error_prefix">Error:</string>
+        <string name="button_retry">Retry</string>
+
+        <!-- DetailScreen -->
+        <string name="title_song_details">Song Details</string>
+        <string name="back_content_description">Back</string>
+        <string name="loading_details_text">Loading song details…</string>
+        <string name="error_invalid_song_id">Invalid song ID</string>
+        <string name="error_song_not_found">Song not found</string>
+        <string name="error_loading_details">Failed to load song details</string>
+        <string name="label_album">Album</string>
+        <string name="label_release_date">Release Date</string>
+        <string name="button_view_on_genius">View on Genius</string>
+        <string name="label_about_song">About the song</string>
+        <string name="album_cover_content_description">Album cover</string>
+        <string name="error_icon_content_description">Error</string>
+        <string name="search_icon_content_description">Search</string>
+        <string name="details_icon_content_description">Details</string>
+        <string name="no_image_content_description">No image</string>
+        <string name="music_note_content_description">Music note</string>
+
+        <!-- SongCard -->
+        <string name="default_unknown_artist">Unknown Artist</string>
+        <string name="default_unknown_title">Unknown Title</string>
+        <string name="default_unknown_error">Unknown error occurred</string>
+</resources>
