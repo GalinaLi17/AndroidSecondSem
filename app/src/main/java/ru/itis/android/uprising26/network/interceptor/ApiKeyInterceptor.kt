@@ -4,19 +4,21 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.Protocol
 import okhttp3.ResponseBody.Companion.toResponseBody
-import ru.itis.android.uprising26.buildconfig.api.BuildConfigProvider
+import ru.itis.android.uprising26.BuildConfig
 import java.util.concurrent.atomic.AtomicInteger
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class ApiKeyInterceptor(
-    private val buildConfigProvider: BuildConfigProvider,
-    private val errorCounter: AtomicInteger = AtomicInteger(0)
-) : Interceptor {
+@Singleton
+class ApiKeyInterceptor @Inject constructor() : Interceptor {
+
+    private val errorCounter = AtomicInteger(0)
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
 
         val newRequest = request.newBuilder()
-            .addHeader("Authorization", "Bearer ${buildConfigProvider.getGeniusApiKey()}")
+            .addHeader("Authorization", "Bearer ${BuildConfig.apiKey}")
             .build()
 
         if (errorCounter.incrementAndGet() % 3 == 0) {

@@ -35,4 +35,25 @@
         <string name="default_unknown_artist">Unknown Artist</string>
         <string name="default_unknown_title">Unknown Title</string>
         <string name="default_unknown_error">Unknown error occurred</string>
+
+        <!-- Buttons -->
+        <string name="test_crash">Test Crash</string>
+
+        <!-- App Info Dialog (опциональная часть) -->
+        <string name="dialog_title_about">About Uprising Music</string>
+        <string name="dialog_welcome_text">Welcome! This app allows you to:\n\n• Search for tracks globally\n• View detailed artist information\n• Stay updated via notifications\n\nBy clicking \'Accept\', you agree to our usage terms.</string>
+        <string name="dialog_button_accept">Accept and Start</string>
+        <string name="info_icon_content_description">Info</string>
+
+        <!-- Push Notifications -->
+        <string name="notification_channel_promo_name">Promotions</string>
+        <string name="notification_channel_promo_desc">Special offers and news</string>
+        <string name="notification_channel_auth_name">Authentication</string>
+        <string name="notification_channel_auth_desc">Security and login alerts</string>
+        <string name="notification_channel_default_name">Default Messages</string>
+        <string name="notification_default_title">New update</string>
+        <string name="notification_default_message">Check out the app</string>
+        <string name="notification_promo_title">Special Offer!</string>
+        <string name="notification_auth_title">Security Alert</string>
+
 </resources>
