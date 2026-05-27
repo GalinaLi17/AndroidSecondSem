@@ -56,4 +56,10 @@
         <string name="notification_promo_title">Special Offer!</string>
         <string name="notification_auth_title">Security Alert</string>
 
+        <string name="custom_chart_title">Custom Circular Chart</string>
+        <string name="chart_percent_format">%1$d%%</string>
+        <string name="chart_error_sectors_count">Количество секторов должно быть от 2 до 7</string>
+        <string name="chart_error_sector_value">Значение каждого сектора должно быть от 1 до 100</string>
+        <string name="chart_error_unique_colors">Цвета секторов не должны повторяться</string>
+
 </resources>
