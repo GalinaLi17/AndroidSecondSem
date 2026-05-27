@@ -52,7 +52,13 @@ class MainViewModel @Inject constructor(
             _uiState.value = UiState.Loading
             try {
                 val songs = searchSongsUseCase(query)
-                _uiState.value = UiState.Success(songs)
+
+                _uiState.value = if (songs.isEmpty()) {
+                    UiState.Error("Songs not found")
+                } else {
+                    UiState.Success(songs)
+                }
+
             } catch (e: Exception) {
                 exceptionHandler.handleException(e)
                 _uiState.value = UiState.Error(e.message ?: "Unknown error occurred")
