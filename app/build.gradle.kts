@@ -4,6 +4,11 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.app.android.application)
     alias(libs.plugins.app.compose)
+    alias(libs.plugins.app.hilt)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.firebase.crashlytics)
 }
 android {
     namespace = "ru.itis.android.uprising26"
@@ -48,7 +53,7 @@ dependencies {
     implementation(libs.play.services.base)
 
     implementation("androidx.navigation:navigation-compose:2.8.9")
-    implementation("androidx.compose.material:material-icons-extended:1.7.8")
+    implementation(libs.androidx.material.icons.extended)
     implementation("io.coil-kt:coil-compose:2.7.0")
 
     implementation(libs.androidx.core.ktx)
@@ -57,4 +62,20 @@ dependencies {
     implementation(libs.x.lifecycle.runtime.ktx)
     implementation(libs.x.activity.compose)
 
+    // Hilt
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler)
+
+    // Hilt Navigation Compose
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.messaging)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
 }

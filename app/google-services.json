@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "108331803576",
+    "project_id": "geniusmusicsearch",
+    "storage_bucket": "geniusmusicsearch.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108331803576:android:3f9b9c1d66f5526f30254d",
+        "android_client_info": {
+          "package_name": "ru.itis.android.uprising26"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA10dfLV2jK29foooQEhtwH7xsxBub3h2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
