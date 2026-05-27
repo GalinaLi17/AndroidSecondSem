@@ -2,6 +2,7 @@ package ru.itis.android.uprising26.presentation.ui
 
 import android.content.Intent
 import android.net.Uri
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -17,12 +18,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import ru.itis.android.uprising26.di.ServiceLocator
 import ru.itis.android.uprising26.presentation.viewmodel.DetailViewModel
-import ru.itis.android.uprising26.presentation.viewmodel.DetailViewModelFactory
 import ru.itis.android.uprising26.R
 
 
@@ -31,14 +30,13 @@ import ru.itis.android.uprising26.R
 fun DetailScreen(
     songId: Long,
     onBackPressed: () -> Unit,
-    viewModel: DetailViewModel = viewModel(
-        factory = DetailViewModelFactory(
-            getSongDetailsUseCase = ServiceLocator.getSongDetailsUseCase(),
-            exceptionHandler = ServiceLocator.getGeneralExceptionHandler()
-        )
-    )
+    viewModel: DetailViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+
+    BackHandler {
+        onBackPressed()
+    }
 
     Scaffold(
         topBar = {
@@ -162,7 +160,7 @@ fun SongDetailsContent(song: ru.itis.android.uprising26.domain.model.SongDetails
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                Divider()
+                HorizontalDivider()
 
                 Spacer(modifier = Modifier.height(16.dp))
 

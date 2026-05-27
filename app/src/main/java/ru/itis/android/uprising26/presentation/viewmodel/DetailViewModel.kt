@@ -3,6 +3,7 @@ package ru.itis.android.uprising26.presentation.viewmodel
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -10,8 +11,10 @@ import kotlinx.coroutines.launch
 import ru.itis.android.uprising26.domain.model.SongDetails
 import ru.itis.android.uprising26.domain.usecase.GetSongDetailsUseCase
 import ru.itis.android.uprising26.utils.handler.GeneralExceptionHandler
+import javax.inject.Inject
 
-class DetailViewModel(
+@HiltViewModel
+class DetailViewModel @Inject constructor(
     private val getSongDetailsUseCase: GetSongDetailsUseCase,
     private val exceptionHandler: GeneralExceptionHandler,
     private val savedStateHandle: SavedStateHandle
